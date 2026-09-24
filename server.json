@@ -1,0 +1,22 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.znecho9/knowledge-forest-mcp",
+  "title": "Knowledge Forest",
+  "description": "Local-first personal knowledge and learning memory for AI tutors with evidence-gated mastery.",
+  "repository": {
+    "url": "https://github.com/znecho9/knowledge-forest-mcp",
+    "source": "github"
+  },
+  "version": "0.1.1",
+  "websiteUrl": "https://github.com/znecho9/knowledge-forest-mcp#readme",
+  "packages": [
+    {
+      "registryType": "mcpb",
+      "identifier": "https://github.com/znecho9/knowledge-forest-mcp/releases/download/v0.1.1/knowledge-forest-mcp.mcpb",
+      "fileSha256": "a99bec59afb70b63a316e5f4510132cde21440e6fd850e4d7938c1b7387d3587",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ]
+}

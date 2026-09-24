@@ -102,7 +102,7 @@ function requiredValue(argv: string[], index: number, option: string): string {
 }
 
 function usage(): string {
-  return `Knowledge Forest MCP — local-first learning state for AI tutors
+  return `Knowledge Forest MCP — personal knowledge and learning memory for AI tutors
 
 Usage:
   knowledge-forest-mcp [serve] [--data-file PATH | --data-dir DIR]

@@ -1,0 +1,58 @@
+{
+  "manifest_version": "0.3",
+  "name": "knowledge-forest-mcp",
+  "display_name": "Knowledge Forest",
+  "version": "0.1.1",
+  "description": "Local-first personal knowledge and learning memory for AI tutors.",
+  "long_description": "Turn learning goals into prerequisite-aware knowledge trees, reuse concepts across goals, preserve notes and evidence across chats, and require novel closed-book performance before claiming mastery. Knowledge Forest runs locally, stores portable JSON, sends no telemetry, and never calls an LLM.",
+  "author": {
+    "name": "znecho9",
+    "url": "https://github.com/znecho9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/znecho9/knowledge-forest-mcp.git"
+  },
+  "homepage": "https://github.com/znecho9/knowledge-forest-mcp",
+  "documentation": "https://github.com/znecho9/knowledge-forest-mcp#readme",
+  "support": "https://github.com/znecho9/knowledge-forest-mcp/issues",
+  "keywords": [
+    "personal knowledge",
+    "personal knowledge management",
+    "PKM",
+    "learning memory",
+    "knowledge graph",
+    "AI tutor",
+    "adaptive learning",
+    "local-first",
+    "mastery verification"
+  ],
+  "license": "Apache-2.0",
+  "compatibility": {
+    "platforms": ["darwin", "win32", "linux"],
+    "runtimes": {
+      "node": ">=22.0.0"
+    }
+  },
+  "server": {
+    "type": "node",
+    "entry_point": "server/dist/cli.js",
+    "mcp_config": {
+      "command": "node",
+      "args": ["${__dirname}/server/dist/cli.js"]
+    }
+  },
+  "tools": [
+    { "name": "forest_overview", "description": "See goals, progress, mastery counts, and ready work." },
+    { "name": "search_knowledge", "description": "Find canonical knowledge nodes that can be reused across goals." },
+    { "name": "get_node_context", "description": "Read a node's relationships, notes, evidence, and diagnosis." },
+    { "name": "diagnose_node", "description": "Identify prerequisite, depth, and evidence gaps." },
+    { "name": "get_learning_queue", "description": "Find ready and prerequisite-blocked learning nodes." },
+    { "name": "create_goal_tree", "description": "Create a minimal prerequisite-aware learning goal tree." },
+    { "name": "update_node_learning_state", "description": "Update learning depth or non-mastery workflow state." },
+    { "name": "append_learning_note", "description": "Append notes, sources, reflections, or exercises." },
+    { "name": "record_verification", "description": "Record evidence and enforce the closed-book mastery rule." },
+    { "name": "export_forest", "description": "Export the complete portable knowledge forest." }
+  ],
+  "prompts_generated": true
+}

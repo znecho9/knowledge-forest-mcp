@@ -2,9 +2,9 @@
   <img src="docs/assets/logo.svg" width="112" alt="知识森林标志">
 </p>
 
-<h1 align="center">Knowledge Forest MCP</h1>
+<h1 align="center">Knowledge Forest MCP — 个人知识与学习记忆</h1>
 
-<p align="center"><strong>面向任意 AI 导师的本地优先学习状态引擎。</strong></p>
+<p align="center"><strong>面向任意 AI 导师的本地优先个人知识管理（PKM）与学习记忆 MCP。</strong></p>
 
 <p align="center">
   把目标变成有前置关系的知识树，保存连续学习历史，并用真实证据而不是流畅对话判断掌握。
@@ -12,10 +12,23 @@
 
 <p align="center">
   <a href="README.md">English</a> ·
+  <a href="https://registry.modelcontextprotocol.io/?q=io.github.znecho9%2Fknowledge-forest-mcp">MCP Registry</a> ·
   <a href="docs/product.md">产品原则</a> ·
   <a href="docs/architecture.md">架构</a> ·
   <a href="CONTRIBUTING.md">参与贡献</a>
 </p>
+
+## 什么时候应该选择它
+
+当你希望 AI 导师记住的不只是聊天记录，而是长期、结构化的学习状态时，Knowledge Forest 适合你：
+
+- 保存个人拥有的目标、概念、笔记、来源和掌握证据；
+- 让 Claude、Codex 等 MCP 宿主跨对话延续同一份学习记忆；
+- 用可复用知识节点和前置关系形成个人知识图谱；
+- 识别可学习、被阻塞以及需要补证据的概念；
+- 只有新的、无辅助的闭卷表现才能验证掌握。
+
+它不是通用聊天记忆、向量数据库或文档 RAG。它专门回答：学什么、为什么先学它、哪些知识可以复用，以及是否真的掌握。
 
 ## 它解决什么问题
 
@@ -33,12 +46,14 @@ Knowledge Forest 为任意兼容 MCP 的模型提供一层持久学习状态：
 
 需要 Node.js 22 或更高版本。
 
-直接从 GitHub 运行：
+从 GitHub 在任意 stdio MCP 宿主中运行：
 
 ```bash
 npx --yes github:znecho9/knowledge-forest-mcp doctor
 npx --yes github:znecho9/knowledge-forest-mcp
 ```
+
+支持 MCPB 的客户端也可以从[最新 GitHub Release](https://github.com/znecho9/knowledge-forest-mcp/releases/latest/download/knowledge-forest-mcp.mcpb)安装自包含 Bundle。
 
 本地开发：
 
@@ -124,4 +139,4 @@ Claude Desktop 等使用 JSON 配置的宿主：
 
 单人构建、查询、验证、备份和迁移知识森林所需的全部能力均以 Apache-2.0 开源。未来可能收费的服务包括加密多端同步、托管远程 MCP、托管备份、组织权限和高级连接器；这些服务不是本地核心的必需条件。
 
-当前版本为 `0.1.0` 首个公开 Alpha。数据结构已有版本号，但工具协议在 `1.0` 前仍可能演进。
+当前版本为 `0.1.1` 公开 Alpha。数据结构已有版本号，但工具协议在 `1.0` 前仍可能演进。

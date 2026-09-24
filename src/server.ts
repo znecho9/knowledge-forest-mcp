@@ -23,7 +23,7 @@ export function createKnowledgeForestServer(options: StoreOptions = {}): McpServ
   const store = new ForestStore(options);
   const service = new ForestService(store);
   const server = new McpServer(
-    { name: "knowledge-forest", version: "0.1.0" },
+    { name: "knowledge-forest", version: "0.1.1" },
     { instructions },
   );
 

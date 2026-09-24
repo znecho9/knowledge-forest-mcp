@@ -3,6 +3,8 @@ dist/
 coverage/
 .npm-cache/
 *.tgz
+artifacts/
+.mcpb-build/
 .DS_Store
 .env
 .knowledge-forest/

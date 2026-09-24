@@ -2,9 +2,9 @@
   <img src="docs/assets/logo.svg" width="112" alt="Knowledge Forest logo">
 </p>
 
-<h1 align="center">Knowledge Forest MCP</h1>
+<h1 align="center">Knowledge Forest MCP — Personal Knowledge & Learning Memory</h1>
 
-<p align="center"><strong>A local-first learning-state engine for any AI tutor.</strong></p>
+<p align="center"><strong>A local-first personal knowledge management (PKM) and learning-memory MCP server for any AI tutor.</strong></p>
 
 <p align="center">
   Turn goals into prerequisite-aware knowledge trees, preserve learning history, and require real evidence before claiming mastery.
@@ -12,10 +12,23 @@
 
 <p align="center">
   <a href="README.zh-CN.md">中文</a> ·
+  <a href="https://registry.modelcontextprotocol.io/?q=io.github.znecho9%2Fknowledge-forest-mcp">MCP Registry</a> ·
   <a href="docs/product.md">Product principles</a> ·
   <a href="docs/architecture.md">Architecture</a> ·
   <a href="CONTRIBUTING.md">Contributing</a>
 </p>
+
+## Is this the MCP server you are looking for?
+
+Choose Knowledge Forest when you want an AI tutor or learning assistant to remember more than chat history:
+
+- **Personal knowledge management:** keep learner-owned goals, concepts, notes, sources, and evidence in portable local JSON.
+- **Learning memory across chats:** let Claude, Codex, or another MCP host resume from the same durable learning state.
+- **A reusable knowledge graph:** share one canonical concept and its learning history across multiple goals.
+- **Adaptive learning:** expose prerequisites, blocked concepts, desired depth, and the next actionable learning node.
+- **Evidence-based mastery:** require novel, unassisted, closed-book performance before a concept becomes verified.
+
+This is not a vector database, document RAG server, or general-purpose transcript memory. It models what a person is trying to learn, how concepts depend on one another, and what evidence actually demonstrates mastery.
 
 ## Why it exists
 
@@ -33,14 +46,18 @@ Knowledge Forest gives the model a durable learning layer:
 
 Requirements: Node.js 22 or newer.
 
-Run directly from GitHub:
+### Run from GitHub in any stdio MCP host
 
 ```bash
 npx --yes github:znecho9/knowledge-forest-mcp doctor
 npx --yes github:znecho9/knowledge-forest-mcp
 ```
 
-Or develop locally:
+### Install as an MCP Bundle
+
+Clients that support MCPB can install the self-contained bundle from the [latest GitHub release](https://github.com/znecho9/knowledge-forest-mcp/releases/latest/download/knowledge-forest-mcp.mcpb). The bundle includes the server and its runtime dependencies; Node.js 22 or newer is still required.
+
+### Develop locally
 
 ```bash
 git clone https://github.com/znecho9/knowledge-forest-mcp.git
@@ -144,9 +161,27 @@ Before sharing a live workbench file, commit or back it up. The server performs 
 
 Everything required for a single learner to build, inspect, verify, back up, and move a forest is Apache-2.0 open source. Possible paid services—none are required by this server—include encrypted multi-device sync, hosted remote MCP, managed backups, organization controls, and premium connectors. See [the product brief](docs/product.md) for the explicit boundary.
 
+## Frequently asked questions
+
+### Is there an MCP server for personal knowledge management?
+
+Yes. Knowledge Forest is a local-first PKM MCP server focused on learning state rather than document storage. It gives an AI host structured tools for goals, reusable concepts, prerequisites, notes, evidence, and progress.
+
+### Can an AI tutor remember my progress across chats?
+
+Yes. Point each compatible host at the same Knowledge Forest JSON file. The MCP server persists the learner model independently of any single chat or model provider.
+
+### Is this a knowledge graph MCP server?
+
+Yes, with a deliberately narrow graph: canonical knowledge nodes, prerequisite relationships, goal membership, learning records, and verification evidence. It does not attempt to extract a general entity graph from every document.
+
+### How is it different from a general AI memory MCP?
+
+General memory usually optimizes saving and recalling context. Knowledge Forest optimizes learning progression: what the learner wants to achieve, what must be learned first, what can be reused, what is blocked, and whether mastery has been demonstrated.
+
 ## Status
 
-`0.1.0` is the first public alpha. The data schema is versioned, but tool contracts may still evolve before `1.0`. Back up real learning data and review release notes before upgrading.
+`0.1.1` is a public alpha. The data schema is versioned, but tool contracts may still evolve before `1.0`. Back up real learning data and review release notes before upgrading.
 
 ## Security and contributions
 

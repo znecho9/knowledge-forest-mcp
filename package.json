@@ -1,7 +1,8 @@
 {
   "name": "@znecho9/knowledge-forest-mcp",
-  "version": "0.1.0",
-  "description": "A local-first learning-state engine for AI tutors, exposed through MCP.",
+  "version": "0.1.1",
+  "description": "Local-first personal knowledge and learning memory MCP server for AI tutors, with knowledge graphs and evidence-based mastery.",
+  "mcpName": "io.github.znecho9/knowledge-forest-mcp",
   "type": "module",
   "license": "Apache-2.0",
   "author": "znecho9",
@@ -15,12 +16,21 @@
   },
   "keywords": [
     "mcp",
+    "mcp-server",
     "model-context-protocol",
+    "personal-knowledge",
+    "personal-knowledge-base",
     "learning",
+    "learning-memory",
+    "adaptive-learning",
     "knowledge-graph",
+    "knowledge-management",
     "personal-knowledge-management",
+    "pkm",
     "local-first",
-    "ai-tutor"
+    "ai-tutor",
+    "intelligent-tutoring-system",
+    "persistent-memory"
   ],
   "engines": {
     "node": ">=22"
@@ -39,10 +49,12 @@
     "NOTICE",
     "README.md",
     "README.zh-CN.md",
+    "server.json",
     "SECURITY.md"
   ],
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
+    "build:mcpb": "npm run build && node scripts/build-mcpb.mjs",
     "dev": "node --import tsx src/cli.ts serve",
     "doctor": "node --import tsx src/cli.ts doctor",
     "lint": "tsc -p tsconfig.json --noEmit",
