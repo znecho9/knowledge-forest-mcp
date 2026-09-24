@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "knowledge-forest": {
+      "command": "npx",
+      "args": ["--yes", "github:znecho9/knowledge-forest-mcp"],
+      "env": {
+        "KNOWLEDGE_FOREST_FILE": "/absolute/path/to/knowledge-forest.json"
+      }
+    }
+  }
+}

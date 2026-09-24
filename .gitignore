@@ -1,0 +1,10 @@
+node_modules/
+dist/
+coverage/
+.npm-cache/
+*.tgz
+.DS_Store
+.env
+.knowledge-forest/
+examples/data/
+*.log

@@ -1,0 +1,64 @@
+{
+  "name": "@znecho9/knowledge-forest-mcp",
+  "version": "0.1.0",
+  "description": "A local-first learning-state engine for AI tutors, exposed through MCP.",
+  "type": "module",
+  "license": "Apache-2.0",
+  "author": "znecho9",
+  "homepage": "https://github.com/znecho9/knowledge-forest-mcp#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/znecho9/knowledge-forest-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/znecho9/knowledge-forest-mcp/issues"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "learning",
+    "knowledge-graph",
+    "personal-knowledge-management",
+    "local-first",
+    "ai-tutor"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "bin": {
+    "knowledge-forest-mcp": "dist/cli.js"
+  },
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "docs",
+    "examples",
+    "LICENSE",
+    "NOTICE",
+    "README.md",
+    "README.zh-CN.md",
+    "SECURITY.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "dev": "node --import tsx src/cli.ts serve",
+    "doctor": "node --import tsx src/cli.ts doctor",
+    "lint": "tsc -p tsconfig.json --noEmit",
+    "test": "node --import tsx --test test/*.test.ts",
+    "check": "npm run lint && npm test && npm run build && npm pack --dry-run --cache .npm-cache",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run check"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "2.1.0",
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/client": "2.1.0",
+    "@types/node": "22.19.19",
+    "tsx": "4.23.15",
+    "typescript": "7.0.2"
+  }
+}
