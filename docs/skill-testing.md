@@ -28,10 +28,11 @@ Use the resulting absolute `$TEST_DIR/forest.json` path in the host's MCP config
 
 ## Automated checks
 
-`npm run check` runs TypeScript linting, the existing MCP/service tests, build, package dry-run, and `test/skill.test.ts`. The new test checks:
+`npm run check` runs TypeScript linting, the existing MCP/service tests, build, package dry-run, and `test/skill.test.ts` plus `test/skill-integration.test.ts`. The tests check:
 - portable frontmatter, directory convention, and required workflow/safety guardrails;
 - exact consistency between documented tool inventory and `src/server.ts`;
-- presence and structural integrity of positive, negative, safety, and failure evaluation prompts.
+- presence and structural integrity of positive, negative, safety, and failure evaluation prompts;
+- a real stdio MCP sequence on disposable data: overview, search, create, queue, source-visible note, assisted verification, and readback.
 
 **These static checks do not prove an AI host will activate the skill correctly or obey it.** A real host with the skill and MCP connected must also be tested.
 
