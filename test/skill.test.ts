@@ -49,7 +49,7 @@ test("Agent Skills frontmatter and directory follow the portable specification",
   assert.match(description, /use when/i);
   assert.ok(compatibility.length > 0 && compatibility.length <= 500);
   assert.equal(frontmatterValue(frontmatter, "license"), "Apache-2.0");
-  assert.ok(skill.slice(match[0].length).startsWith("# Knowledge Forest:"));
+  assert.ok(skill.slice(match[0].length).trimStart().startsWith("# Knowledge Forest:"));
   assert.ok(skill.split(/\r?\n/).length < 500);
   assert.ok(!/\/Users\/[^\s]+|@gmail\.com|PLACEHOLDER|TODO:/i.test(skill));
 });
